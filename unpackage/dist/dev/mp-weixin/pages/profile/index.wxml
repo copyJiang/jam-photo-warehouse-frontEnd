@@ -1,0 +1,1 @@
+<view><view class="login-section" bindtap="{{a}}"><view class="profile"></view><view type="text">请点击登录</view></view><view class="login-section" bindtap="{{b}}"> 修改用户信息</view><view class="login-section" bindtap="{{c}}"> 获取用户信息</view></view>
