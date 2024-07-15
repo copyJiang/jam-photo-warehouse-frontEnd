@@ -23,17 +23,34 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.login-section {
-  height: 300rpx;
-  background-color: #eee;
-  display: flex;
-  align-items: center;
-  padding: 0 80rpx;
+.container.data-v-201c0da5 {
+  overflow: auto;
 }
-.login-section .profile {
-  width: 100rpx;
-  height: 100rpx;
-  background-color: #ccc;
-  margin-right: 20rpx;
-  border-radius: 50%;
+.container-bg.data-v-201c0da5 {
+  height: 400rpx;
+  width: 100%;
+  background-color: rgba(80, 9, 153, 0.25);
+}
+.container .block.data-v-201c0da5 {
+  padding: 0 30rpx;
+}
+.container .block .user-box.data-v-201c0da5 {
+  height: 280rpx;
+  border-radius: 8rpx;
+  position: relative;
+  margin-top: -180rpx;
+  box-shadow: 0 0 8rpx 8rpx rgba(51, 51, 51, 0.1);
+}
+.container .block .user-box .user-show.data-v-201c0da5 {
+  padding: 0 40rpx;
+  height: 120rpx;
+}
+.container .block .user-box .user-show .avatar.data-v-201c0da5 {
+  height: 96rpx;
+  width: 96rpx;
+  margin-right: 40rpx;
+}
+.container .block .user-box .user-welcome.data-v-201c0da5 {
+  height: 160rpx;
+  font-size: 48rpx;
 }

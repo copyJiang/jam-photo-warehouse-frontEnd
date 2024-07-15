@@ -1,70 +1,30 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const stores_member = require("../../stores/member.js");
 const _sfc_main = {
   __name: "index",
   setup(__props) {
-    const token = common_vendor.ref("");
-    function clickLogin() {
-      console.log("--------------------------登录");
-      common_vendor.index.login({
-        provider: "weixin",
-        success: function(loginRes) {
-          console.log(loginRes.code);
-          common_vendor.index.request({
-            url: "http://localhost:3000/user/token",
-            method: "POST",
-            data: {
-              code: loginRes.code
-            },
-            success: (res) => {
-              token.value = res.data.data;
-              console.log(res);
-            }
-          });
-        }
-      });
-    }
-    function changeUserInfo() {
-      common_vendor.index.request({
-        url: "http://localhost:3000/user/info",
-        method: "PUT",
-        data: {
-          nickName: "昵称",
-          sex: "2",
-          avatar: "",
-          tel: "18368609824",
-          country: "CNA",
-          province: "浙江",
-          city: "杭州"
-        },
-        header: {
-          "refresh-token": token.value
-        },
-        success: (res) => {
-          console.log(res);
-        }
-      });
-    }
-    function getUserInfo() {
-      common_vendor.index.request({
-        url: "http://localhost:3000/user/info",
-        method: "GET",
-        header: {
-          "refresh-token": token.value
-        },
-        success: (res) => {
-          console.log(res);
-        }
+    const memberStore = common_vendor.storeToRefs(stores_member.useMemberStore());
+    const member = memberStore.member;
+    const isLogin = memberStore.isLogin;
+    function login() {
+      common_vendor.index.navigateTo({
+        url: "/pages/login/index"
       });
     }
     return (_ctx, _cache) => {
-      return {
-        a: common_vendor.o(clickLogin),
-        b: common_vendor.o(changeUserInfo),
-        c: common_vendor.o(getUserInfo)
-      };
+      return common_vendor.e({
+        a: common_vendor.unref(isLogin) ? common_vendor.unref(member).avatar : "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png",
+        b: !common_vendor.unref(isLogin)
+      }, !common_vendor.unref(isLogin) ? {
+        c: common_vendor.o(login)
+      } : {
+        d: common_vendor.t(common_vendor.unref(member).username)
+      }, {
+        e: common_vendor.unref(isLogin)
+      }, common_vendor.unref(isLogin) ? {} : {});
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/Administrator/Desktop/jiang-uni-demo/jam-photo-warehouse-frontEnd/pages/profile/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-201c0da5"], ["__file", "C:/Users/Administrator/Desktop/jiang-uni-demo/jam-photo-warehouse-frontEnd/pages/profile/index.vue"]]);
 wx.createPage(MiniProgramPage);

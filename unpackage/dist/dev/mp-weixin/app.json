@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/summarizing/index",
     "pages/profile/index",
-    "pages/home/index",
-    "pages/charge/index"
+    "pages/login/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -17,22 +17,16 @@
     "backgroundColor": "#F8F8F8",
     "list": [
       {
+        "text": "统计",
+        "iconPath": "static/tabBar/summarizing.png",
+        "selectedIconPath": "static/tabBar/summarizing-active.png",
+        "pagePath": "pages/summarizing/index"
+      },
+      {
         "text": "我的",
-        "iconPath": "static/profile.png",
-        "selectedIconPath": "static/profile-active.png",
+        "iconPath": "static/tabBar/profile.png",
+        "selectedIconPath": "static/tabBar/profile-active.png",
         "pagePath": "pages/profile/index"
-      },
-      {
-        "text": "记事",
-        "iconPath": "static/profile.png",
-        "selectedIconPath": "static/profile-active.png",
-        "pagePath": "pages/home/index"
-      },
-      {
-        "text": "记账",
-        "iconPath": "static/profile.png",
-        "selectedIconPath": "static/profile-active.png",
-        "pagePath": "pages/charge/index"
       }
     ]
   },

@@ -1,91 +1,76 @@
-<template>
-	<main>
-		<section class="login-section" @click="clickLogin">
-			<div class="profile"></div>
-			<div type="text">请点击登录</div>
-		</section>
-		<section class="login-section" @click="changeUserInfo"> 修改用户信息</section>
-		<section class="login-section" @click="getUserInfo"> 获取用户信息</section>
-	</main>
-</template>
+
 
 <script setup>
-	import {
-		ref
-	} from 'vue';
-	const token = ref('')
-
-	function clickLogin() {
-		console.log('--------------------------登录')
-		uni.login({
-			provider: 'weixin',
-			success: function(loginRes) {
-				console.log(loginRes.code);
-				uni.request({
-					url: 'http://localhost:3000/user/token',
-					method: 'POST',
-					data: {
-						code: loginRes.code
-					},
-					success: (res) => {
-						token.value = res.data.data
-						console.log(res);
-					}
-				})
-			}
-		});
-	}
-
-	function changeUserInfo() {
-		uni.request({
-			url: 'http://localhost:3000/user/info',
-			method: 'PUT',
-			data: {
-				nickName: '昵称',
-				sex: '2',
-				avatar: '',
-				tel: '18368609824',
-				country: 'CNA',
-				province: '浙江',
-				city: '杭州'
-			},
-			header: {
-				'refresh-token': token.value
-			},
-			success: (res) => {
-				console.log(res)
-			}
-		})
-	}
-
-	function getUserInfo() {
-		uni.request({
-			url: 'http://localhost:3000/user/info',
-			method: 'GET',
-			header: {
-				'refresh-token': token.value
-			},
-			success: (res) => {
-				console.log(res)
-			}
-		})
-	}
+import { useMemberStore } from "@/stores/member";
+import { storeToRefs } from "pinia";
+const memberStore = storeToRefs(useMemberStore());
+const member = memberStore.member;
+const isLogin = memberStore.isLogin;
+function login() {
+  uni.navigateTo({
+    url: "/pages/login/index",
+  });
+}
 </script>
 
-<style lang="scss">
-	.login-section {
-		height: 300rpx;
-		background-color: #eee;
-		display: flex;
-		align-items: center;
-		padding: 0 80rpx;
+<template>
+  <view class="container">
+    <view class="container-bg"> </view>
+    <view class="block">
+      <view class="bg-white user-box">
+        <view class="user-show d-flex align-items-center">
+          <image
+            class="avatar"
+            :src="
+              isLogin
+                ? member.avatar
+                : 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'
+            "
+          />
+          <view v-if="!isLogin" @tap="login">请点击授权登录</view>
+          <view v-else>{{ member.username }}</view>
+        </view>
+        <view
+          v-if="isLogin"
+          class="user-welcome d-flex align-items-center justify-content-center"
+          >欢迎回来~</view
+        >
+      </view>
+    </view>
+  </view>
+</template>
 
-		.profile {
-			width: 100rpx;
-			height: 100rpx;
-			background-color: #ccc;
-			margin-right: 20rpx;
-			border-radius: 50%;
-		}
-	}
+
+<style lang="scss" scoped>
+.container {
+  overflow: auto;
+  &-bg {
+    height: 400rpx;
+    width: 100%;
+    background-color: rgba($color: $primary-color, $alpha: 0.25);
+  }
+  .block {
+    padding: 0 30rpx;
+    .user-box {
+      height: 280rpx;
+      border-radius: 8rpx;
+      position: relative;
+      margin-top: -180rpx;
+      box-shadow: $box-shadow;
+      .user-show {
+        padding: 0 40rpx;
+        height: 120rpx;
+        .avatar {
+          height: 96rpx;
+          width: 96rpx;
+          margin-right: 40rpx;
+        }
+      }
+      .user-welcome {
+        height: 160rpx;
+        font-size: 48rpx;
+      }
+    }
+  }
+}
 </style>

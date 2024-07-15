@@ -1,29 +1,37 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path": "pages/charge/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "记账"
+		// 	}
+		// }, {
+		// 	"path": "pages/matter/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "记事"
+		// 	}
+		// }, {
+		// 	"path": "pages/add/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "新增"
+		// 	}
+		// }, 
 		{
-			"path": "pages/charge/index",
-			"style": {
-				"navigationBarTitleText": "记账"
-			}
-		}, {
-			"path": "pages/matter/index",
-			"style": {
-				"navigationBarTitleText": "记事"
-			}
-		}, {
-			"path": "pages/add/index",
-			"style": {
-				"navigationBarTitleText": "新增"
-			}
-		}, {
 			"path": "pages/summarizing/index",
 			"style": {
 				"navigationBarTitleText": "统计"
 			}
-		}, {
+		},
+		{
 			"path": "pages/profile/index",
 			"style": {
 				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
 			}
 		}
 	],
@@ -40,31 +48,36 @@
 		"fontSize": "14px",
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
-		"list": [{
-			"text": "记账",
-			"iconPath": "static/charge.png",
-			"selectedIconPath": "static/charge-active.png",
-			"pagePath": "pages/charge/index"
-		}, {
-			"text": "记事",
-			"iconPath": "static/matter.png",
-			"selectedIconPath": "static/matter-active.png",
-			"pagePath": "pages/matter/index"
-		}, {
-			"text": "新增",
-			"iconPath": "static/add.png",
-			"selectedIconPath": "static/add-active.png",
-			"pagePath": "pages/add/index"
-		}, {
-			"text": "统计",
-			"iconPath": "static/summarizing.png",
-			"selectedIconPath": "static/summarizing-active.png",
-			"pagePath": "pages/summarizing/index"
-		}, {
-			"text": "我的",
-			"iconPath": "static/profile.png",
-			"selectedIconPath": "static/profile-active.png",
-			"pagePath": "pages/profile/index"
-		}]
+		"list": [
+			// {
+			// 	"text": "记账",
+			// 	"iconPath": "static/charge.png",
+			// 	"selectedIconPath": "static/charge-active.png",
+			// 	"pagePath": "pages/charge/index"
+			// }, {
+			// 	"text": "记事",
+			// 	"iconPath": "static/matter.png",
+			// 	"selectedIconPath": "static/matter-active.png",
+			// 	"pagePath": "pages/matter/index"
+			// },
+			// {
+			// 	"text": "新增",
+			// 	"iconPath": "static/add.png",
+			// 	"selectedIconPath": "static/add-active.png",
+			// 	"pagePath": "pages/add/index"
+			// },
+			{
+				"text": "统计",
+				"iconPath": "static/tabBar/summarizing.png",
+				"selectedIconPath": "static/tabBar/summarizing-active.png",
+				"pagePath": "pages/summarizing/index"
+			},
+			{
+				"text": "我的",
+				"iconPath": "static/tabBar/profile.png",
+				"selectedIconPath": "static/tabBar/profile-active.png",
+				"pagePath": "pages/profile/index"
+			}
+		]
 	}
 }

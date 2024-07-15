@@ -1,9 +1,9 @@
 <template>
-	<div>主页</div>
+  <div>主页</div>
 </template>
 
 <script>
 </script>
 
-<style>
+<style lang=”scss“ scoped>
 </style>
