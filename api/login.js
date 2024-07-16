@@ -1,12 +1,17 @@
 import {
-	axiosInstance
+	request
 } from "@/utils/request";
 
-
+// /**
+//  * 微信一键登录
+//  */
+// export const loginInWx = (data) => {
+// 	return request(
+// 		'/user/token',
+// 		'POST',
+// 		data,
+// 	})
+// }
 export const loginInWx = (data) => {
-	return axiosInstance({
-		url: '/user/token',
-		method: 'post',
-		data
-	})
+	return request('/user/token', 'POST', data, {})
 }
