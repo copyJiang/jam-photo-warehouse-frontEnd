@@ -1,0 +1,1 @@
+<view class="lump-btn data-v-eaae7672" style="{{b}}"><button open-type="{{a}}" class="lump-item data-v-eaae7672" hover-class="is-hover"><slot></slot></button></view>

@@ -1,0 +1,1 @@
+export { default as lumpBtn } from './lumpBtn.vue'

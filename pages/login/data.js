@@ -1,6 +1,6 @@
 export const Member = {
 	"avatar": "/static/images/mine/default.png",
-	'nickName': '吕璟坤',
+	'nickName': '王姐',
 	'sex': 0,
 	'tel': '110',
 	'country': '中国',

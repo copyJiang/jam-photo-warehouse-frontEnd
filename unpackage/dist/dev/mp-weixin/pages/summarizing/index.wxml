@@ -1,0 +1,1 @@
+<view class="container data-v-394bcf09"><view class="summarizing data-v-394bcf09"><view wx:for="{{a}}" wx:for-item="item" wx:key="c" class="data-v-394bcf09"><summarizing-item wx:if="{{item.b}}" class="data-v-394bcf09" u-i="{{item.a}}" bind:__l="__l" u-p="{{item.b}}"/></view></view></view>

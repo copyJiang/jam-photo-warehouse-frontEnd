@@ -10,40 +10,56 @@
 		// 	"style": {
 		// 		"navigationBarTitleText": "记事"
 		// 	}
-		// }, {
+		// },
+		// {
 		// 	"path": "pages/add/index",
 		// 	"style": {
 		// 		"navigationBarTitleText": "新增"
 		// 	}
-		// }, 
+		// },
 		{
-			"path": "pages/profile/index",
+			"path": "pages/home/index",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "旅途记录",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path": "pages/summarizing/index",
+			"path": "pages/profile/index",
 			"style": {
-				"navigationBarTitleText": "统计"
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
 			"path": "pages/login/index",
 			"style": {
-				"navigationBarTitleText": "登录"
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
 			"path": "pages/login/userAgreement",
 			"style": {
-				"navigationBarTitleText": "用户协议"
+				"navigationBarTitleText": "用户协议",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path": "pages/login/userInfo",
+			"path": "pages/profile/userInfo",
 			"style": {
-				"navigationBarTitleText": "我的信息"
+				"navigationBarTitleText": "我的信息",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/summarizing/index",
+			"style": {
+				"navigationBarTitleText": "历史记录",
+				"enablePullDownRefresh": true,
+				"pullToRefresh": {
+					"color": "#ff0000"
+				}
 			}
 		}
 	],
@@ -73,13 +89,25 @@
 			// 	"pagePath": "pages/matter/index"
 			// },
 			// {
+			// 	"text": "统计",
+			// 	"iconPath": "static/tabBar/summarizing.png",
+			// 	"selectedIconPath": "static/tabBar/summarizing-active.png",
+			// 	"pagePath": "pages/summarizing/index"
+			// },
+			// {
 			// 	"text": "新增",
-			// 	"iconPath": "static/add.png",
-			// 	"selectedIconPath": "static/add-active.png",
+			// 	"iconPath": "static/tabBar/add.png",
+			// 	"selectedIconPath": "static/tabBar/add-active.png",
 			// 	"pagePath": "pages/add/index"
 			// },
 			{
-				"text": "统计",
+				"text": "首页",
+				"iconPath": "static/tabBar/home.png",
+				"selectedIconPath": "static/tabBar/home-active.png",
+				"pagePath": "pages/home/index"
+			},
+			{
+				"text": "记录",
 				"iconPath": "static/tabBar/summarizing.png",
 				"selectedIconPath": "static/tabBar/summarizing-active.png",
 				"pagePath": "pages/summarizing/index"

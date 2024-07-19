@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "旅途记录",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "btn-form": "./components/btnForm"
+  }
+}
